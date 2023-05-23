@@ -7,11 +7,13 @@
 
 import UIKit
 
-class GenerateIdeaVC: UIViewController {
+final class GenerateIdeaVC: UIViewController {
     
-    lazy var generateButton: UIButton = {
+    private let generateIdeaView = GenerateIdeaView()
+    
+    private lazy var constructButton: UIButton = {
         let button = UIButton()
-        button.backgroundColor = .systemPink
+        button.backgroundColor = .secondaryLabel
         button.addTarget(self, action: #selector(generateButtonTap), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.layer.cornerCurve = .continuous
@@ -22,17 +24,25 @@ class GenerateIdeaVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemBackground
-        view.addSubview(generateButton)
+        view.backgroundColor = .secondarySystemBackground
+        view.addSubview(constructButton)
+        view.addSubview(generateIdeaView)
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         NSLayoutConstraint.activate([
-            generateButton.heightAnchor.constraint(equalToConstant: 100),
-            generateButton.widthAnchor.constraint(equalToConstant: 100),
-            generateButton.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 200),
-            generateButton.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+            generateIdeaView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            generateIdeaView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -150),
+            generateIdeaView.heightAnchor.constraint(equalToConstant: 220),
+            generateIdeaView.widthAnchor.constraint(equalToConstant: 350),
+            
+            constructButton.heightAnchor.constraint(equalToConstant: 100),
+            constructButton.widthAnchor.constraint(equalToConstant: 100),
+            constructButton.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 230),
+            constructButton.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
     }
     
     @objc func generateButtonTap() {
-        print("Generated")
+        let vc = IdeaConstructorVC()
+        navigationController?.pushViewController(vc, animated: true)
     }
 }

@@ -14,10 +14,12 @@
 		881C3E102A151BCB004BD236 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 881C3E0E2A151BCB004BD236 /* LaunchScreen.storyboard */; };
 		881C3E182A151C2D004BD236 /* BIDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881C3E172A151C2D004BD236 /* BIDataManager.swift */; };
 		881C3E1E2A161C03004BD236 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881C3E1D2A161C03004BD236 /* Activity.swift */; };
-		881C3E202A1625FA004BD236 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881C3E1F2A1625FA004BD236 /* TabBarController.swift */; };
 		881C3E222A162625004BD236 /* GenerateIdeaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881C3E212A162625004BD236 /* GenerateIdeaVC.swift */; };
 		881C3E242A16569E004BD236 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881C3E232A16569E004BD236 /* AppCoordinator.swift */; };
 		881C3E302A17BE38004BD236 /* IdeaConstructorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881C3E2F2A17BE38004BD236 /* IdeaConstructorVC.swift */; };
+		881C3E322A1A976F004BD236 /* RandomIdeaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881C3E312A1A976F004BD236 /* RandomIdeaView.swift */; };
+		881C3E372A1BA885004BD236 /* BIViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881C3E362A1BA885004BD236 /* BIViewModel.swift */; };
+		881C3E3A2A1BB6CB004BD236 /* GenerateIdeaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881C3E392A1BB6CB004BD236 /* GenerateIdeaView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,10 +32,12 @@
 		881C3E112A151BCB004BD236 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		881C3E172A151C2D004BD236 /* BIDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BIDataManager.swift; sourceTree = "<group>"; };
 		881C3E1D2A161C03004BD236 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
-		881C3E1F2A1625FA004BD236 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		881C3E212A162625004BD236 /* GenerateIdeaVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateIdeaVC.swift; sourceTree = "<group>"; };
 		881C3E232A16569E004BD236 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		881C3E2F2A17BE38004BD236 /* IdeaConstructorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdeaConstructorVC.swift; sourceTree = "<group>"; };
+		881C3E312A1A976F004BD236 /* RandomIdeaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomIdeaView.swift; sourceTree = "<group>"; };
+		881C3E362A1BA885004BD236 /* BIViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BIViewModel.swift; sourceTree = "<group>"; };
+		881C3E392A1BB6CB004BD236 /* GenerateIdeaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateIdeaView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,8 @@
 		881C3E022A151BCA004BD236 /* BoredIdeas */ = {
 			isa = PBXGroup;
 			children = (
+				881C3E382A1BA88C004BD236 /* ViewModels */,
+				881C3E332A1A9774004BD236 /* Views */,
 				881C3E272A17A467004BD236 /* Core */,
 				881C3E282A17A475004BD236 /* VIewController */,
 				881C3E2B2A17A4A0004BD236 /* Manager */,
@@ -89,7 +95,6 @@
 		881C3E282A17A475004BD236 /* VIewController */ = {
 			isa = PBXGroup;
 			children = (
-				881C3E1F2A1625FA004BD236 /* TabBarController.swift */,
 				881C3E212A162625004BD236 /* GenerateIdeaVC.swift */,
 				881C3E072A151BCA004BD236 /* RandomIdeaVC.swift */,
 				881C3E2F2A17BE38004BD236 /* IdeaConstructorVC.swift */,
@@ -128,6 +133,23 @@
 				881C3E0E2A151BCB004BD236 /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		881C3E332A1A9774004BD236 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				881C3E312A1A976F004BD236 /* RandomIdeaView.swift */,
+				881C3E392A1BB6CB004BD236 /* GenerateIdeaView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		881C3E382A1BA88C004BD236 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				881C3E362A1BA885004BD236 /* BIViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,14 +222,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				881C3E3A2A1BB6CB004BD236 /* GenerateIdeaView.swift in Sources */,
 				881C3E222A162625004BD236 /* GenerateIdeaVC.swift in Sources */,
 				881C3E182A151C2D004BD236 /* BIDataManager.swift in Sources */,
 				881C3E302A17BE38004BD236 /* IdeaConstructorVC.swift in Sources */,
 				881C3E082A151BCA004BD236 /* RandomIdeaVC.swift in Sources */,
 				881C3E1E2A161C03004BD236 /* Activity.swift in Sources */,
+				881C3E372A1BA885004BD236 /* BIViewModel.swift in Sources */,
 				881C3E242A16569E004BD236 /* AppCoordinator.swift in Sources */,
-				881C3E202A1625FA004BD236 /* TabBarController.swift in Sources */,
 				881C3E042A151BCA004BD236 /* AppDelegate.swift in Sources */,
+				881C3E322A1A976F004BD236 /* RandomIdeaView.swift in Sources */,
 				881C3E062A151BCA004BD236 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

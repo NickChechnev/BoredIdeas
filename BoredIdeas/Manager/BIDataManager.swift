@@ -7,7 +7,7 @@
 
 import Foundation
 
-class BIDataManager {
+final class BIDataManager {
     static let shared = BIDataManager()
     
     private init() {}
@@ -18,11 +18,14 @@ class BIDataManager {
     
     enum BIDataManagerError: Error {
         case failedToGetData
-        case failedToProceedRequest
+        case badURL
     }
     
     public func fetch<T: Codable>(_ url: String, expecting type: T.Type, completion: @escaping (Result<T, Error>) -> Void) {
-        guard let url = URL(string: url) else { return }
+        guard let url = URL(string: url) else {
+            completion(.failure(BIDataManagerError.badURL))
+            return
+        }
         let request = URLRequest(url: url)
         let task = URLSession.shared.dataTask(with: request) { data, _, error in
             guard let data, error == nil else {
